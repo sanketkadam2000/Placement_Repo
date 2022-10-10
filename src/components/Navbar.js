@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div style={{display:'flex', flexDirection:'row', alignItems:"center"}}>
+      <div style={{display:'flex', flexDirection:'row', alignItems:"center", marginLeft:"1%", marginRight:"1%"}}>
       <div style={{display:'flex', flex:1, backgroundColor:'#00000050', justifyContent:"center", alignItems:"center", padding:"1%"}}>
        <h1 style={{color:"white"}}>Placement Management System</h1>
        </div>
