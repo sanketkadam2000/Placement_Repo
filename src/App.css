@@ -22,11 +22,13 @@ body {
   display: flex;
   align-items: top;
   color: #fff;
-  
+  justify-content: center;
+  align-items: center;
   margin-left: 25%;
   margin-right: 10%;
   font-weight: 900;
   font-size: 20px;
+  margin:auto
 }
 
 .container {
@@ -91,105 +93,28 @@ body {
   font-size: 14px;
 }
 
-.login{
-  align-items: center;
+table{
+  width:100%;
+  border:1px solid;
+  align-self: center;
+  background-color:#099090;
 }
 
-.App {
-  text-align: center;
-  background-color:green;
-  }
+tr{
+  padding: 2rem 1rem;
   
-  .label{
-  display: block;
-  font-size: larger;
-  color: white;
-  padding: 5px;
-  }
-  
-  .input{
-  font-size: larger;
-  padding: 5px;
-  margin: 2px;
-  
-  }
-  .btn{
-  color: white;
-  background-color: red;
-  border-radius: 5px;
-  font-size: larger;
-  display: block;
-  padding: 5px;
-  margin: 10px auto;
-  }
-  
-  .messages{
-  display: flex;
-  justify-content: center;
-  }
-  
-  .error{
-  display: block;
-  background-color: red;
-  color: white;
- 
-  height: 50px;
-  padding: 5px;
-  }
-  
-  .success{
-  display: block;
-  background-color: lightblue;
-  color: black;
-  }
-  .App {
-    text-align: center;
-    background-color:green;
-    }
-    
-    .label{
-    display: block;
-    font-size: larger;
-    color: white;
-    padding: 5px;
-    }
-    
-    .input{
-    font-size: larger;
-    padding: 5px;
-    margin: 2px;
-    
-    }
-    .btn{
-    color: white;
-    background-color: red;
-    border-radius: 5px;
-    font-size: larger;
-    display: block;
-    padding: 5px;
-    margin: 10px auto;
-    }
-    
-    .messages{
-    display: flex;
-    justify-content: center;
-    }
-    
-    .error{
-    display: block;
-    background-color: red;
-    color: white;
-    width: fitcontent;
-    height: 50px;
-    padding: 5px;
-    }
-    
-    .success{
-    display: block;
-    background-color: lightblue;
-    color: black;
-    width: fitcontent;
-    height: 50px;
-    padding: 5px;
-    }
-  
+}
+
+tr:first-child td{
+ font-size: 1.6rem;
+ font-weight: bold;
+ margin:2rem 0 !important; 
+ /* text-align: center; */
+}
+
+td{
+  padding:0 2rem;
+  /* text-align: center; */
+  color:white;
+  box-shadow: #00000050;
+}

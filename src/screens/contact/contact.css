@@ -1,0 +1,127 @@
+.contactContainer {
+    
+  text-align: center;
+  justify-content: center;
+  display: flex; 
+  padding:10rem 0;
+  background-color: #e1e3eb;
+  background: linear-gradient(to bottom,#6eabc3,#7ebc7e);
+  width: 100%;
+  height: 100vh;
+}
+.contactSubContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:30rem;
+  width: 60%;
+  padding: 1rem 1rem;
+  box-shadow: 8px 9px 10px 9px rgb(111, 110, 110);
+  border-radius: 00.5rem;
+  background-color: white;
+  flex-direction: column;
+}
+
+.formContainer1{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.leftSide {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSide {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding:0 1rem;
+}
+
+.container-image {
+  background-color: rgb(223, 221, 221); 
+  border-radius: 150px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 8rem;
+  width: 8rem;
+  margin:0.2rem 0;
+  /* background-color: red; */
+}
+
+.formContainer{
+  margin:0.8rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formContainer input{
+  align-content: center;
+    width: 18rem;
+    height: 2.5rem;
+    /* border-radius: 3rem; */
+    /* box-shadow: inset 0px 0px 25px 0px #888; */
+    /* outline: none; */
+    border:0;
+    color:#00000050;
+    background-color: #fff;
+    margin-left: 0.8rem;
+}
+
+.inputContainer{
+  border-bottom: 1px solid #e1e3eb;
+  margin-bottom: 0.8rem;
+  display: flex;
+}
+
+.email{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 14px 0 0 25px;
+}
+
+.name{
+    padding-left: 70px;
+    font-size: 20px;
+    align-content: center;
+}
+
+.submit-button{
+  width: 18rem;
+  height: 2.5rem;     
+}
+
+  .submit-button button{
+      width: 18rem;
+      height: 2.5rem;
+      border-radius: 3rem; 
+      background-image: linear-gradient(to bottom,#6eabc3,#7ebc7e
+      );
+      border:none;
+      color:white;
+      font-size: 1rem;
+      font-weight: bold;
+      /* text-transform: capitalize; */
+  }
+
+.link{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color:cadetblue;
+    margin:2rem 0;
+}
