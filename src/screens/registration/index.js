@@ -1,101 +1,49 @@
-import { useState } from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import profile from "../../img/user.jpg";
+import email from "../../img/user.jpg";
+import pass from "../../img/user.jpg";
+import "./Registartion.css";
+import {FaLock, FaUserAlt} from 'react-icons/fa';
+import {MdEmail} from 'react-icons/md';
 
-export default function Form() {
+function Registartion() {
+  return (
+    <div className="main">
+     <div className="sub-main">
+       <div>
+         <div className="imgs">
+           <div className="container-image">
+             <img src={profile} alt="profile" className="profile"/>
+           </div>
+         </div>
+         <div className="formContainer">
+           
+            <div className="inputContainer">
+             <FaUserAlt size={20} color="#6eabc3"/>
+			 <input type="text" placeholder="Username" className="name"/>
+            </div>
+            <div className="inputContainer">
+             <MdEmail size={20} color="#6eabc3"/>
+			 <input type="email" placeholder="Email" className="name"/>
+            </div>
+            <div className="inputContainer">
+			 <FaLock size={20} color="#6eabc3"/>
+             <input type="password" placeholder="Password" className="name"/>
+            </div>
+          	<div className="registartion-button">
+          		<button>Registartion</button>
+          	</div>
+           
+ 
+         </div>
+       </div>
+       
 
-// States for registration
-const [name, setName] = useState('');
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
-
-// States for checking the errors
-const [submitted, setSubmitted] = useState(false);
-const [error, setError] = useState(false);
-
-// Handling the name change
-const handleName = (e) => {
-	setName(e.target.value);
-	setSubmitted(false);
-};
-
-// Handling the email change
-const handleEmail = (e) => {
-	setEmail(e.target.value);
-	setSubmitted(false);
-};
-
-// Handling the password change
-const handlePassword = (e) => {
-	setPassword(e.target.value);
-	setSubmitted(false);
-};
-
-// Handling the form submission
-const handleSubmit = (e) => {
-	e.preventDefault();
-	if (name === '' || email === '' || password === '') {
-	setError(true);
-	} else {
-	setSubmitted(true);
-	setError(false);
-	}
-};
-
-// Showing success message
-const successMessage = () => {
-	return (
-	<div
-		className="success"
-		style={{
-		display: submitted ? '' : 'none',
-		}}>
-		<h1>User {name} successfully registered!!</h1>
-	</div>
-	);
-};
-
-// Showing error message if error is true
-const errorMessage = () => {
-	return (
-	<div
-		className="error"
-		style={{
-		display: error ? '' : 'none',
-		}}>
-		<h1>Please enter all the fields</h1>
-	</div>
-	);
-};
-
-return (
-	<div className="form">
-	<div>
-		<h1>User Registration</h1>
-	</div>
-
-	{/* Calling to the methods */}
-	<div className="messages">
-		{errorMessage()}
-		{successMessage()}
-	</div>
-
-	<form>
-		{/* Labels and inputs for form data */}
-		<label className="label">Name</label>
-		<input onChange={handleName} className="input"
-		value={name} type="text" />
-
-		<label className="label">Email</label>
-		<input onChange={handleEmail} className="input"
-		value={email} type="email" />
-
-		<label className="label">Password</label>
-		<input onChange={handlePassword} className="input"
-		value={password} type="password" />
-
-		<button onClick={handleSubmit} className="btn" type="submit">
-		Submit
-		</button>
-	</form>
-	</div>
-);
+     </div>
+    </div>
+  );
 }
+
+export default Registartion;
+

@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="banner">
           <NavBar />
-          <Home />
+          
           <div className="banner__content">
         <div className="container">
           <div className="banner__text"></div>
