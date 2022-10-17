@@ -30,8 +30,8 @@ const Home = () => {
     // }
 
     useEffect(()=>{
-        axios.get('http://localhost:8063/placements').then(response=>{   
-        setCompanies(response?.data?._embedded?.placements)
+        axios.get('http://localhost:8064/users').then(response=>{   
+        setCompanies(response?.data?._embedded?.students)
         }).catch(error=>{
             console.log(error)
         })
@@ -42,7 +42,7 @@ const Home = () => {
     
 
     const deleteCompany=(id)=>{
-        axios.delete(`http://localhost:8063/placements/${id}`).then(response=>{
+        axios.delete(`http://localhost:8064/admins/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)

@@ -61,7 +61,7 @@ const Navbar = () => {
        <h1 style={{color:colors.white, fontSize:24, fontWeight:"bold"}}>Placement Management System</h1>
        </div>
        <div style={{display:'flex', flex:2, flexDirection:"row", alignSelf:'center'}}>
-        { rollname=="student"?studenNavObject.map(item=>{
+        { rollname==="student"?studenNavObject.map(item=>{
           return <div style={{padding:'3%', margin:"1%", border:1, borderStyle:"solid", borderColor:colors.white, borderRadius:10}}><Link to={item.toLink} style={{color:colors.white, fontWeight:"bold", textDecoration:'none'}}>{item.name}</Link></div>
         })
         :

@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import profile from "../../img/user.jpg";
-import email from "../../img/user.jpg";
-import pass from "../../img/user.jpg";
-import "./Registartion.css";
 import {FaLock, FaUserAlt} from 'react-icons/fa';
 import {MdEmail} from 'react-icons/md';
 
