@@ -1,6 +1,4 @@
 import React from "react";
-import { FaFileExcel } from "react-icons/fa";
-import headerr from "../../img/headerr.png";
 import "./contact.css";
 import {FaLock, FaUserAlt} from 'react-icons/fa';
 import {MdEmail} from 'react-icons/md';
