@@ -44,6 +44,9 @@ const Placement = () => {
                         <td>
                             Schedule Date
                         </td>
+                        <td>
+
+                        </td>
                     </tr>
                     {
                         companies.map((companies,index)=>{
@@ -62,7 +65,10 @@ const Placement = () => {
                             {companies.localDate}
                         </td>
                         <td>
-                            <input className ="deleteButton" type="Submit" title="Delete" name="Delete" onClick={()=>deletecompanies(55)}/>
+                        <div className="buttonSectionTdDiv">
+                        <button className ="deleteButton" onClick={()=>deletecompanies(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deletecompanies(55)}>Delete</button>
+                        </div>
                         </td>
                     </tr>
                             )

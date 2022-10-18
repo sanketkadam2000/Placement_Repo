@@ -42,6 +42,9 @@ const Admin = () => {
                         <td>
                             Password
                         </td>
+                        <td>
+
+                        </td>
 
                     </tr>
                     {
@@ -58,7 +61,10 @@ const Admin = () => {
                             {admin.adminpassword}
                         </td>
                         <td>
-                        <input className ="deleteButton" type="Submit" title="Delete" name="Delete" onClick={()=>deleteadmin(55)}/>
+                        <div className="buttonSectionTdDiv">
+                        <button className ="deleteButton" onClick={()=>deleteadmin(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteadmin(55)}>Delete</button>
+                        </div>
                         </td>
                     </tr>
                             )

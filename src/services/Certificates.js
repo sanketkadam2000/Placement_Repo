@@ -39,6 +39,9 @@ const Certificate = () => {
                         <td>
                             Year
                         </td>
+                        <td>
+
+                        </td>
                     </tr>
                     {
                         certificates.map((certificate,index)=>{
@@ -51,7 +54,10 @@ const Certificate = () => {
                             {certificate.year}
                         </td>
                         <td>
-                        <input className ="deleteButton" type="Submit" title="Delete" name="Delete" onClick={()=>deletecertificate(55)}/>
+                        <div className="buttonSectionTdDiv">
+                        <button className ="deleteButton" onClick={()=>deletecertificate(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deletecertificate(55)}>Delete</button>
+                        </div>
                         </td>
                     </tr>
                             )

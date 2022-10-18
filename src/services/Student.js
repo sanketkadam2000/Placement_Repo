@@ -1,8 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 
 const Student = () => {
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddStudent`; 
+      navigate(path);
+    }
 
 
     const [students,setStudents]=useState([]);   
@@ -28,7 +34,7 @@ const Student = () => {
     return (
        <div className="dataContainer">
 
-       <button className="button"> <IoMdPersonAdd size={20} color="white" />Add Student</button>
+       <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add Student</button>
       
        <table>
                     <tr>
