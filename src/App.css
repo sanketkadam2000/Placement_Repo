@@ -162,11 +162,12 @@ tr:first-child td{
  border-bottom: 1px solid #ffffff;
 }
 
-tr:last-child
+/*tr:last-child*/
 
 td{
-  padding:0 2rem;
-  /* text-align: center; */
+
+  text-align: left; 
+  padding: 0 2rem;
   color:white;
   box-shadow: #00000050;
 }

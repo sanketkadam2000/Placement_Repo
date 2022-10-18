@@ -45,6 +45,9 @@ const User= () => {
                         <td>
                            Type
                         </td>
+                        <td>
+
+                        </td>
 
                     </tr>
                     {
@@ -64,7 +67,10 @@ const User= () => {
                             {user.usertype}
                         </td>
                         <td>
-                        <input className ="deleteButton" type="Submit" title="Delete" name="Delete" onClick={()=>deleteUser(55)}/>
+                        <div className="buttonSectionTdDiv">
+                        <button className ="deleteButton" onClick={()=>deleteUser(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteUser(55)}>Delete</button>
+                        </div>
                         </td>
                     </tr>
                             )

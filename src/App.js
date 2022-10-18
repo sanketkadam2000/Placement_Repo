@@ -6,6 +6,7 @@ import Contact from "./screens/contact";
 import Registration from "./screens/registration";
 import About from "./screens/about";
 import Home from "./screens/home";
+import AddStudent from "./screens/AddStudent";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Student from "./services/Student";
 import Admin from "./services/Admin";
@@ -14,6 +15,7 @@ import User from "./services/User";
 import College from "./services/College";
 import Certificate from "./services/Certificates";
 import Dashboard from "./services/Dashboard";
+
 function App() {
   return (
       <>
@@ -26,11 +28,13 @@ function App() {
         <Route path="/Contact" element={<Contact/>} exact />
         <Route path="/About" element={<About/>} exact />
         <Route path="/Sidebar" element={<Sidebar/>} exact />
+        
         </Routes>
       </Router>  
       <Router>
       <Sidebar>
         <Routes> 
+        <Route path="/AddStudent" element={<AddStudent/>} exact />
         <Route path="/Dashboard" element={<Dashboard />} exact />
         <Route path="/Student" element={<Student />} exact />
         <Route path="/Admin" element={<Admin/>} exact />

@@ -61,7 +61,10 @@ const College = () => {
                             {college.location}
                         </td>
                         <td>
-                        <input className ="deleteButton" type="Submit" title="Delete" name="Delete" onClick={()=>deletecollege(55)}/>
+                        <div className="buttonSectionTdDiv">
+                        <button className ="deleteButton" onClick={()=>deletecollege(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deletecollege(55)}>Delete</button>
+                        </div>
                         </td>
                     </tr>
                             )
