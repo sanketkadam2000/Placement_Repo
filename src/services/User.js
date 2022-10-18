@@ -19,6 +19,8 @@ const User= () => {
         })
     },[])
 
+    
+    
     const deleteUser=(id)=>{
         axios.delete(`http://localhost:8064/users/${id}`).then(response=>{
             console.log(response)

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./AddStudent.css";
+import "./EditStudent.css";
 import {FaUserAlt,FaUniversity} from 'react-icons/fa';
 import {MdEmail,MdLocalPhone} from 'react-icons/md';
 import {GiBookCover} from 'react-icons/gi';
@@ -12,7 +12,7 @@ const colleges=[{name:"SIOM",
 
 const courses=[{name:"BE", value:"be"},{name:"MCA", value:"mca"}]
 
-export default function AddStudent() {
+export default function EditStudent() {
      
     const [selectedCourse,setSelectedCourse]=useState(null);
     const [selectedCollge, setSelectedCollge]=useState(null);
@@ -20,8 +20,6 @@ export default function AddStudent() {
     useEffect(()=>{
         console.log(selectedCollge,selectedCourse);
 },[selectedCollge,selectedCourse])
-
- 
 
   return (
     
@@ -65,8 +63,8 @@ export default function AddStudent() {
                     </select>
                 </div>
                 <div className="buttonSectionTdDiv">
-                        <button className="submit-button" onClick={()=>AddStudent(55)}>Submit</button>
-                        <button className="submit-button"  onClick={()=>AddStudent(55)}>Back</button>
+                        <button className="submit-button" onClick={()=>EditStudent(55)}>Submit</button>
+                        <button className="submit-button"  onClick={()=>EditStudent(55)}>Back</button>
                 </div>
             </div>
         </div>
