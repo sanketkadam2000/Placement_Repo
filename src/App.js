@@ -15,6 +15,7 @@ import User from "./services/User";
 import College from "./services/College";
 import Certificate from "./services/Certificates";
 import Dashboard from "./services/Dashboard";
+import EditStudent from "./screens/EditStudent";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Sidebar>
         <Routes> 
         <Route path="/AddStudent" element={<AddStudent/>} exact />
+        <Route path="/EditStudent" element={<EditStudent/>} exact />
         <Route path="/Dashboard" element={<Dashboard />} exact />
         <Route path="/Student" element={<Student />} exact />
         <Route path="/Admin" element={<Admin/>} exact />

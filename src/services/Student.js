@@ -13,22 +13,21 @@ const Student = () => {
 
     const [students,setStudents]=useState([]);   
 
-    useEffect(()=>{
-        axios.get('http://localhost:8064/students').then(response=>{   
-        setStudents(response?.data?._embedded?.students)
-        }).catch(error=>{
-            console.log(error)
-        })
-    },[])
-
-    const deleteStudent=(id)=>{
-        axios.delete(`http://localhost:8064/students/${id}`).then(response=>{
-            console.log(response)
-        }).catch(error=>{
-            console.log(error)
-        })
+    useEffect(() => {
+        loadStudents();
+      }, []);
     
-    }
+      const loadStudents = async () => {
+        const result = await axios.get("http://localhost:8064/students");
+        setStudents(result.data._embedded.students);
+      };
+
+    const deleteStudent = async id => {
+        await axios.delete(`http://localhost:8064/students/${id}`);
+        loadStudents();
+      };
+    
+    
 
     {console.log(students,"from api data")}
     return (
@@ -102,8 +101,9 @@ const Student = () => {
                     }
                 </table> 
                 </div>
-                    )
+    );
+                };
 
-}
+
 
     export default Student;
