@@ -1,26 +1,28 @@
 .main {
-    text-align: center;
-    justify-content: center;
-    display: flex; 
-    padding:10rem 0;
-    background-color: #e1e3eb;
-    background: linear-gradient(to bottom,#6eabc3,#7ebc7e);
-    width: 100%;
-    height: 100vh;
-  }
-  .sub-main {
-    display: flex;
-    justify-content: center;
-    height:"100%" !important;
-    width: 35%;
-    height: 50%;
-    box-shadow: 8px 9px 10px 9px rgb(111, 110, 110);
-    elevation:10px;
-    padding: 1rem 1rem;
-    border-radius: 5rem;
-    background-color: white;
-  }
-  .imgs {
+    
+  text-align: center;
+  justify-content: center;
+  display: flex; 
+  padding:10rem 0;
+  background-color: #e1e3eb;
+  background: linear-gradient(to bottom,#6eabc3,#7ebc7e);
+  width: 100%;
+height: 100vh;
+}
+.sub-main {
+  display: flex;
+  justify-content: center;
+  /* height: 30rem; */
+  height:"100%" !important;
+  width: 35%;
+  box-shadow: 8px 9px 10px 9px rgb(111, 110, 110);
+  elevation:10px;
+  padding: 1rem 1rem;
+  border-radius: 5rem; 
+  background-color: white;
+  
+}
+.imgs {
     /* padding-top: 20px; */
     justify-content: center;
     align-items: center;
@@ -43,40 +45,64 @@
   margin:0.2rem 0;
   /* background-color: red; */
 }
+.profile {
+  height: 100px;
+  width: 100px;
+  border-radius: 130px;
+} 
+.formContainer{
+  margin:0.8rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
 
-  input{
-    width: 300px;
-    height: 50px;
-    border-radius: 60px;
+.formContainer input{
+  align-content: center;
+    width: 18rem;
+    height: 2.5rem;
+    /* border-radius: 3rem; */
     /* box-shadow: inset 0px 0px 25px 0px #888; */
-    border: none;
-    outline: none;
+    /* outline: none; */
+    border:0;
+    color:#00000050;
     background-color: #fff;
-    justify-content: center;
-    align-items: center;
-}
-.registation-button{
-    width: 18rem;
-    height: 2.5rem;
+    margin-left: 0.8rem;
 }
 
-.registartion-button button{
-    width: 18rem;
-    height: 2.5rem;
-    border-radius: 3rem; 
-    background-image: linear-gradient(to bottom,#6eabc3,#7ebc7e
-    );
-    border:none;
-    color:white;
-    font-size: 1rem;
-    font-weight: bold;
-    
-    /* text-transform: capitalize; */
+.inputContainer{
+  border-bottom: 1px solid #e1e3eb;
+  margin-bottom: 0.8rem;
 }
 
-  .email{
+.email{
     height: 25px;
     width: 25px;
     position: absolute;
     padding: 14px 0 0 25px;
 }
+
+.name{
+    padding-left: 70px;
+    font-size: 20px;
+    align-content: center;
+}
+.registartion-button{
+    width: 18rem;
+    height: 2.5rem;
+}
+
+   .registartion-button button{
+      width: 18rem;
+      height: 2.5rem;
+      border-radius: 3rem; 
+      background-image: linear-gradient(to bottom,#6eabc3,#7ebc7e
+      );
+      border:none;
+      color:white;
+      font-size: 1rem;
+      font-weight: bold;
+  }
+
+ 

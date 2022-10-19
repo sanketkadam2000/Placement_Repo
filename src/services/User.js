@@ -12,7 +12,7 @@ const User= () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8064/users').then(response=>{   
+        axios.get('http://localhost:8065/users').then(response=>{   
         setUsers(response?.data?._embedded?.users)
         }).catch(error=>{
             console.log(error)
@@ -22,7 +22,7 @@ const User= () => {
     
     
     const deleteUser=(id)=>{
-        axios.delete(`http://localhost:8064/users/${id}`).then(response=>{
+        axios.delete(`http://localhost:8065/users/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)

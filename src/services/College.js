@@ -12,7 +12,7 @@ const College = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8064/colleges').then(response=>{   
+        axios.get('http://localhost:8065/colleges').then(response=>{   
         setColleges(response?.data?._embedded?.colleges)
         }).catch(error=>{
             console.log(error)
@@ -20,7 +20,7 @@ const College = () => {
     },[])
 
     const deletecollege=(id)=>{
-        axios.delete(`http://localhost:8064/colleges/${id}`).then(response=>{
+        axios.delete(`http://localhost:8065/colleges/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)

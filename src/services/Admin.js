@@ -12,7 +12,7 @@ const Admin = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8064/admins').then(response=>{   
+        axios.get('http://localhost:8065/admins').then(response=>{   
         setAdmins(response?.data?._embedded?.admins)
         }).catch(error=>{
             console.log(error)
@@ -20,7 +20,7 @@ const Admin = () => {
     },[])
 
     const deleteadmin=(id)=>{
-        axios.delete(`http://localhost:8064/admins/${id}`).then(response=>{
+        axios.delete(`http://localhost:8065/admins/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)
