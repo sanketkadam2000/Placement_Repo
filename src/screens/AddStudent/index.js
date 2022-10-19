@@ -65,8 +65,11 @@ export default function AddStudent() {
                     </select>
                 </div>
                 <div className="buttonSectionTdDiv">
+                <a href="/Sidebar">
                         <button className="submit-button" onClick={()=>AddStudent(55)}>Submit</button>
-                        <button className="submit-button"  onClick={()=>AddStudent(55)}>Back</button>
+                        <a href="/Sidebar"></a>
+                        <button className="submit-button"  onClick={()=>AddStudent(55)}>Back </button>
+                        </a>
                 </div>
             </div>
         </div>

@@ -18,16 +18,31 @@ const Student = () => {
       }, []);
     
       const loadStudents = async () => {
-        const result = await axios.get("http://localhost:8064/students");
+        const result = await axios.get("http://localhost:8065/students");
         setStudents(result.data._embedded.students);
       };
 
     const deleteStudent = async id => {
-        await axios.delete(`http://localhost:8064/students/${id}`);
+        await axios.delete(`http://localhost:8065/students/${id}`);
         loadStudents();
       };
+
+    // const deleteStudent=async id=>{
+    //     const response=await fetch(`/student/students/${id}`,{
+    //         method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+    //         mode: 'cors', // no-cors, *cors, same-origin
+    //         // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    //         // credentials: 'same-origin', // include, *same-origin, omit
+    //         headers: {
+    //           'Content-Type': 'application/json'
+    //           // 'Content-Type': 'application/x-www-form-urlencoded',
+    //         }});
+
+    //         console.log(response.json(),"from delete student")
+        
+    // }
     
-    
+      
 
     {console.log(students,"from api data")}
     return (
@@ -65,6 +80,7 @@ const Student = () => {
                     </tr>
                     {
                         students.map((student,index)=>{
+                            console.log(student,"from student table data")
                             return(
                         <tr>
                         <td>
@@ -90,8 +106,8 @@ const Student = () => {
                         </td>
                         <td>
                             <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteStudent(55)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteStudent(55)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>deleteStudent(33)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteStudent(33)}>Delete</button>
                         </div>
                         </td>
                         

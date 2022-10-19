@@ -12,7 +12,7 @@ const Placement = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8064/placements').then(response=>{   
+        axios.get('http://localhost:8065/placements').then(response=>{   
         setCompanies(response?.data?._embedded?.placements)
         }).catch(error=>{
             console.log(error)
@@ -20,7 +20,7 @@ const Placement = () => {
     },[])
 
     const deletecompanies=(id)=>{
-        axios.delete(`http://localhost:8064/placements/${id}`).then(response=>{
+        axios.delete(`http://localhost:8065/placements/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)

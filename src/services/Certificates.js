@@ -12,7 +12,7 @@ const Certificate = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8064/certificates').then(response=>{   
+        axios.get('http://localhost:8065/certificates').then(response=>{   
         setCertificates(response?.data?._embedded?.certificates)
         }).catch(error=>{
             console.log(error)
@@ -20,7 +20,7 @@ const Certificate = () => {
     },[])
 
     const deletecertificate=(id)=>{
-        axios.delete(`http://localhost:8064/certificates/${id}`).then(response=>{
+        axios.delete(`http://localhost:8065/certificates/${id}`).then(response=>{
             console.log(response)
         }).catch(error=>{
             console.log(error)

@@ -64,7 +64,9 @@ export default function EditStudent() {
                 </div>
                 <div className="buttonSectionTdDiv">
                         <button className="submit-button" onClick={()=>EditStudent(55)}>Submit</button>
-                        <button className="submit-button"  onClick={()=>EditStudent(55)}>Back</button>
+                        <a href="/Sidebar">
+                        <button className="submit-button"  onClick={()=>EditStudent(55)}>Back </button>
+                        </a>
                 </div>
             </div>
         </div>
