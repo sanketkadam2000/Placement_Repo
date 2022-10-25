@@ -18,12 +18,12 @@ const Student = () => {
       }, []);
     
       const loadStudents = async () => {
-        const result = await axios.get("http://localhost:8065/students");
+        const result = await axios.get("http://localhost:8080/student");
         setStudents(result.data._embedded.students);
       };
 
     const deleteStudent = async id => {
-        await axios.delete(`http://localhost:8065/students/${id}`);
+        await axios.delete(`http://localhost:8080/student/${id}`);
         loadStudents();
       };
 
