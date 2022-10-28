@@ -12,21 +12,27 @@ const Admin = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8065/admins').then(response=>{   
-        setAdmins(response?.data?._embedded?.admins)
+        getAdmins();
+    },[])
+
+    const getAdmins=()=>{
+        axios.get('http://localhost:8080/admins').then(response=>{   
+        console.log(response,"console from get admins method")
+         setAdmins(response?.data)
         }).catch(error=>{
             console.log(error)
         })
-    },[])
+    }
 
-    const deleteadmin=(id)=>{
-        axios.delete(`http://localhost:8065/admins/${id}`).then(response=>{
-            console.log(response)
+    const deleteAdmins=(id)=>{
+        axios.delete(`http://localhost:8080/admins/${id}`,{mode:"cors"}).then(response=>{
+            console.log(response,"from delete admins")
+            getAdmins()
         }).catch(error=>{
             console.log(error)
         })
     
-    }
+      }
 
     {console.log(admins,"from api data")}
     return (
@@ -52,18 +58,18 @@ const Admin = () => {
                             return(
                         <tr>
                         <td>
-                            {index+1}
+                            {admin.admin_id}
                         </td>
                         <td>
-                            {admin.adminname}
+                            {admin.admin_name}
                         </td>
                         <td>
-                            {admin.adminpassword}
+                            {admin.admin_password}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteadmin(55)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteadmin(55)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>deleteAdmins(admin.admin_id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteAdmins(admin.admin_id)}>Delete</button>
                         </div>
                         </td>
                     </tr>

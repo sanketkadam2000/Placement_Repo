@@ -12,22 +12,27 @@ const College = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8065/colleges').then(response=>{   
-        setColleges(response?.data?._embedded?.colleges)
+        getColleges();
+    },[])
+
+    const getColleges=()=>{
+        axios.get('http://localhost:8080/colleges').then(response=>{   
+        console.log(response,"console from get colleges method")
+         setColleges(response?.data)
         }).catch(error=>{
             console.log(error)
         })
-    },[])
+    }
 
-    const deletecollege=(id)=>{
-        axios.delete(`http://localhost:8065/colleges/${id}`).then(response=>{
-            console.log(response)
+    const deleteColleges=(id)=>{
+        axios.delete(`http://localhost:8080/colleges/${id}`,{mode:"cors"}).then(response=>{
+            console.log(response,"from delete admins")
+            getColleges()
         }).catch(error=>{
             console.log(error)
         })
     
-    }
-
+      }
     {console.log(colleges,"from api data")}
     return (
         <div className="dataContainer">
@@ -52,7 +57,7 @@ const College = () => {
                             return(
                         <tr>
                         <td>
-                            {index+1}
+                            {college.college_id}
                         </td>
                         <td>
                             {college.college_name}
@@ -62,8 +67,8 @@ const College = () => {
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deletecollege(55)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deletecollege(55)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>deleteColleges(college.college_id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteColleges(college.college_id)}>Delete</button>
                         </div>
                         </td>
                     </tr>
