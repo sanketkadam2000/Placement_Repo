@@ -1,40 +1,41 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const Certificate = () => {
+const Course = () => {
 
-    const [certificates,setCertificates]=useState([]);   
+    const [courses,setCourses]=useState([]);   
 
 
     useEffect(()=>{
-        getCertificates();
+        getCourses();
     },[])
 
-    const getCertificates=()=>{
-        axios.get('http://localhost:8080/certificates').then(response=>{   
-        console.log(response,"console from get certificates method")
-         setCertificates(response?.data)
+    const getCourses=()=>{
+        axios.get('http://localhost:8080/courses').then(response=>{   
+        console.log(response,"console from get courses method")
+         setCourses(response?.data)
         }).catch(error=>{
             console.log(error)
         })
     }
 
-    const deleteCertificates=(id)=>{
-        axios.delete(`http://localhost:8080/certificates/${id}`,{mode:"cors"}).then(response=>{
-            console.log(response,"from delete admins")
-            getCertificates()
+    const deleteCourses=(id)=>{
+        axios.delete(`http://localhost:8080/courses/${id}`,{mode:"cors"}).then(response=>{
+            console.log(response,"from delete courses")
+            getCourses()
         }).catch(error=>{
             console.log(error)
         })
     
       }
 
-    {console.log(Certificate,"from api data")}
+    {console.log(courses,"from api data")}
     return (
         <div className="dataContainer">
         <table>
@@ -43,36 +44,38 @@ const Certificate = () => {
                             Id
                         </td>
                         <td>
-                            Year
+                            Course Name
                         </td>
+                       
                         <td>
 
                         </td>
+
                     </tr>
                     {
-                        certificates.map((certificate,index)=>{
+                    courses.map((course,index)=>{
                             return(
                         <tr>
                         <td>
-                            {certificate.Certificate_id}
+                            {course.course_id}
                         </td>
                         <td>
-                            {certificate.year}
+                            {course.course_name}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteCertificates()}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteCertificates()}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>deleteCourses(course.course_id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteCourses(course.course_id)}>Delete</button>
                         </div>
                         </td>
                     </tr>
                             )
                         })
                     }
-                </table> 
+                </table>
                 </div>
                     )
 }
                 
 
-    export default Certificate;
+    export default Course;

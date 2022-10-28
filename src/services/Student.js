@@ -4,28 +4,41 @@ import {IoMdPersonAdd} from 'react-icons/io';
 import { useNavigate } from "react-router-dom";
 
 const Student = () => {
-    let navigate = useNavigate(); 
+    const navigate = useNavigate(); 
     const routeChange = () =>{ 
       let path = `/AddStudent`; 
       navigate(path);
     }
 
+    const updateStudent=(data)=>{
+        navigate('/AddStudent', { state: { student:data } });
+    }
+
 
     const [students,setStudents]=useState([]);   
 
-    useEffect(() => {
-        loadStudents();
-      }, []);
-    
-      const loadStudents = async () => {
-        const result = await axios.get("http://localhost:8080/student");
-        setStudents(result.data._embedded.students);
-      };
+    useEffect(()=>{
+        getStudents();
+    },[])
 
-    const deleteStudent = async id => {
-        await axios.delete(`http://localhost:8080/student/${id}`);
-        loadStudents();
-      };
+    const getStudents=()=>{
+        axios.get('http://localhost:8080/students').then(response=>{   
+        console.log(response,"console from get student method")
+         setStudents(response?.data)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+
+    const deleteStudents=(id)=>{
+        axios.delete(`http://localhost:8080/students/${id}`,{mode:"cors"}).then(response=>{
+            console.log(response,"from delete students")
+            getStudents()
+        }).catch(error=>{
+            console.log(error)
+        })
+    
+      }
 
     // const deleteStudent=async id=>{
     //     const response=await fetch(`/student/students/${id}`,{
@@ -55,24 +68,21 @@ const Student = () => {
                     <td>
                            Id
                         </td>
-                        
-                        <td>
-                           RollNo.
-                        </td>
-                        <td>
-                            Hallticketno.
-                        </td>
                         <td>
                             Name
                         </td>
                         <td>
-                           Course
+                            Email
+                        </td>
+                        
+                        <td>
+                           Contact No
                         </td>
                         <td>
-                            Criteria
+                            College Id
                         </td>
                         <td>
-                            Year
+                           Course Id
                         </td>
                         <td>
 
@@ -84,30 +94,27 @@ const Student = () => {
                             return(
                         <tr>
                         <td>
-                            {index+1}
+                            {student.student_id}
                         </td>
                         <td>
-                            {student.student_roll}
+                            {student.student_first_name+" "+student.student_last_name}
                         </td>
                         <td>
-                            {student.student_hallticketno}
+                            {student.student_email}
                         </td>
                         <td>
-                            {student.student_name}
+                            {student.student_phone_no}
                         </td>
                         <td>
-                            {student.student_course}
+                            {student.student_college_id}
                         </td>
                         <td>
-                            {student.studentquali}
-                        </td>
-                        <td>
-                            {student.studentyear}
+                            {student.student_course_id}
                         </td>
                         <td>
                             <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteStudent(33)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteStudent(33)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>updateStudent(student)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteStudents(student.student_id)}>Delete</button>
                         </div>
                         </td>
                         

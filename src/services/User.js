@@ -13,12 +13,12 @@ const User= () => {
 
     useEffect(()=>{
         getEmployees();
-        deleteEmployees(4);
     },[])
 
     const getEmployees=()=>{
         axios.get('http://localhost:8080/employees').then(response=>{   
         console.log(response,"from get call");
+        setUsers(response?.data)
         }).catch(error=>{
             console.log(error)
         })
@@ -27,6 +27,7 @@ const User= () => {
     const deleteEmployees=(id)=>{
         axios.delete(`http://localhost:8080/employees/${id}`).then(response=>{
             console.log(response,"from delete employees")
+            getEmployees()
         }).catch(error=>{
             console.log(error)
         })
@@ -60,21 +61,21 @@ const User= () => {
                             return(
                         <tr>
                         <td>
-                            {index+1}
+                            {user.id}
                         </td>
                         <td>
-                            {user.user_name}
+                            {user.name}
                         </td>
                         <td>
-                            {user.user_password}
+                            {user.age}
                         </td>
                         <td>
-                            {user.user_type}
+                            {user.salary}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        {/* <button className ="deleteButton" onClick={()=>deleteUser(1)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteUser(1)}>Delete</button> */}
+                        <button className ="deleteButton" onClick={()=>deleteEmployees(user.id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteEmployees(user.id)}>Delete</button> 
                         </div>
                         </td>
                     </tr>

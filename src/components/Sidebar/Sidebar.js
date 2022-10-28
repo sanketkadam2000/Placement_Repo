@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaBars, FaHome,FaCertificate ,FaUserTie, FaUser,FaUniversity } from "react-icons/fa";
 import {  AiTwotoneFileExclamation } from "react-icons/ai";
+import {  ImBook } from "react-icons/im";
 import { RiAdminFill } from "react-icons/ri";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -24,6 +25,11 @@ const routes = [
     path: "/Certificate",
     name: "Certificate",
     icon: <FaCertificate color={"#fff"}/>,
+  },
+  {
+    path: "/Courses",
+    name: "COurses",
+    icon: <ImBook color={"#fff"} />,
   },
   {
     path: "/College",

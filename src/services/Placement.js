@@ -12,21 +12,27 @@ const Placement = () => {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8065/placements').then(response=>{   
-        setCompanies(response?.data?._embedded?.placements)
+        getPlacements();
+    },[])
+
+    const getPlacements=()=>{
+        axios.get('http://localhost:8080/placements').then(response=>{   
+        console.log(response,"console from get placement method")
+         setCompanies(response?.data)
         }).catch(error=>{
             console.log(error)
         })
-    },[])
+    }
 
-    const deletecompanies=(id)=>{
-        axios.delete(`http://localhost:8065/placements/${id}`).then(response=>{
-            console.log(response)
+    const deletePlacements=(id)=>{
+        axios.delete(`http://localhost:8080/placements/${id}`,{mode:"cors"}).then(response=>{
+            console.log(response,"from delete placements")
+            getPlacements()
         }).catch(error=>{
             console.log(error)
         })
     
-    }
+      }
     {console.log(companies,"from api data")}
     return (
         <div className="dataContainer">
@@ -53,10 +59,10 @@ const Placement = () => {
                             return(
                         <tr>
                         <td>
-                            {index+1}
+                            {companies.placemnet_id}
                         </td>
                         <td>
-                            {companies.placementname}
+                            {companies.placement_name}
                         </td>
                         <td>
                             {companies.qualification}
@@ -66,8 +72,8 @@ const Placement = () => {
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deletecompanies(55)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deletecompanies(55)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>deletePlacements(55)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deletePlacements(55)}>Delete</button>
                         </div>
                         </td>
                     </tr>
