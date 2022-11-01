@@ -1,14 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const Placement = () => {
+  const Placement = () => {
+    const navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddPlacement`; 
+      navigate(path);
+    }
 
-    const [companies,setCompanies]=useState([]);   
+
+    const updatePlacement=(data)=>{
+        navigate('/AddPlacement', { state: { placement:data } });
+    }   
+
+
+    const [placements,setPlacements]=useState([]);   
 
 
     useEffect(()=>{
@@ -18,7 +30,7 @@ const Placement = () => {
     const getPlacements=()=>{
         axios.get('http://localhost:8080/placements').then(response=>{   
         console.log(response,"console from get placement method")
-         setCompanies(response?.data)
+        setPlacements(response?.data)
         }).catch(error=>{
             console.log(error)
         })
@@ -33,9 +45,10 @@ const Placement = () => {
         })
     
       }
-    {console.log(companies,"from api data")}
+    {console.log(placements,"from api data")}
     return (
         <div className="dataContainer">
+            <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add Placement</button>
         <table>
                     <tr>
                         <td>
@@ -55,25 +68,25 @@ const Placement = () => {
                         </td>
                     </tr>
                     {
-                        companies.map((companies,index)=>{
+                        placements.map((placements,index)=>{
                             return(
                         <tr>
                         <td>
-                            {companies.placemnet_id}
+                            {placements.placement_id}
                         </td>
                         <td>
-                            {companies.placement_name}
+                            {placements.placement_name}
                         </td>
                         <td>
-                            {companies.qualification}
+                            {placements.qualification}
                         </td>
                         <td>
-                            {companies.localDate}
+                            {placements.local_date}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deletePlacements(55)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deletePlacements(55)}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>updatePlacement(placements)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deletePlacements(placements.placement_id)}>Delete</button>
                         </div>
                         </td>
                     </tr>

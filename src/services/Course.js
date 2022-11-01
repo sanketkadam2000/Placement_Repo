@@ -1,13 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const Course = () => {
+  const Course = () => {
+    const navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddCourse`; 
+      navigate(path);
+    }
+
+
+    const updateCourse=(data)=>{
+        navigate('/AddCourse', { state: { course:data } });
+    }   
+
 
     const [courses,setCourses]=useState([]);   
 
@@ -38,6 +50,7 @@ const Course = () => {
     {console.log(courses,"from api data")}
     return (
         <div className="dataContainer">
+             <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add Course</button>
         <table>
                     <tr>
                         <td>
@@ -64,7 +77,7 @@ const Course = () => {
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteCourses(course.course_id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>updateCourse(course)}>Update</button>
                         <button className ="deleteButton" onClick={()=>deleteCourses(course.course_id)}>Delete</button>
                         </div>
                         </td>

@@ -27,8 +27,8 @@ const routes = [
     icon: <FaCertificate color={"#fff"}/>,
   },
   {
-    path: "/Courses",
-    name: "COurses",
+    path: "/Course",
+    name: "/Course",
     icon: <ImBook color={"#fff"} />,
   },
   {

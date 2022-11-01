@@ -1,12 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
+
 
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const College = () => {
+  const College = () => {
+    const navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddCollege`; 
+      navigate(path);
+    }
+
+
+    const updateCollege=(data)=>{
+        navigate('/AddCollege', { state: { college:data } });
+    }   
 
     const [colleges,setColleges]=useState([]);   
 
@@ -26,7 +39,7 @@ const College = () => {
 
     const deleteColleges=(id)=>{
         axios.delete(`http://localhost:8080/colleges/${id}`,{mode:"cors"}).then(response=>{
-            console.log(response,"from delete admins")
+            console.log(response,"from delete colleges")
             getColleges()
         }).catch(error=>{
             console.log(error)
@@ -36,6 +49,7 @@ const College = () => {
     {console.log(colleges,"from api data")}
     return (
         <div className="dataContainer">
+            <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add College</button>
         <table>
                     <tr>
                         <td>
@@ -67,7 +81,7 @@ const College = () => {
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteColleges(college.college_id)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>updateCollege(college)}>Update</button>
                         <button className ="deleteButton" onClick={()=>deleteColleges(college.college_id)}>Delete</button>
                         </div>
                         </td>
