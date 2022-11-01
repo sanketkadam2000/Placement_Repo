@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {IoMdPersonAdd} from 'react-icons/io';
 import { useNavigate } from "react-router-dom";
+// import { toast, ToastContainer } from "react-toastify";
 
 const Student = () => {
     const navigate = useNavigate(); 
@@ -32,35 +33,31 @@ const Student = () => {
 
     const deleteStudents=(id)=>{
         axios.delete(`http://localhost:8080/students/${id}`,{mode:"cors"}).then(response=>{
-            console.log(response,"from delete students")
+            // toast.success('Student deleted successfully ...');
+            alert("Student deleted successfully...")
             getStudents()
         }).catch(error=>{
             console.log(error)
         })
     
       }
-
-    // const deleteStudent=async id=>{
-    //     const response=await fetch(`/student/students/${id}`,{
-    //         method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
-    //         mode: 'cors', // no-cors, *cors, same-origin
-    //         // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    //         // credentials: 'same-origin', // include, *same-origin, omit
-    //         headers: {
-    //           'Content-Type': 'application/json'
-    //           // 'Content-Type': 'application/x-www-form-urlencoded',
-    //         }});
-
-    //         console.log(response.json(),"from delete student")
-        
-    // }
-    
       
 
     {console.log(students,"from api data")}
     return (
        <div className="dataContainer">
-
+        {/* <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            /> */}
        <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add Student</button>
       
        <table>
@@ -123,6 +120,7 @@ const Student = () => {
                         })
                     }
                 </table> 
+                
                 </div>
     );
                 };

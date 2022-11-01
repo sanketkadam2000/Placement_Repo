@@ -1,12 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const Certificate = () => {
+  const Certificate = () => {
+    const navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddCertificate`; 
+      navigate(path);
+    }
+
+
+    const updateCertificate=(data)=>{
+        navigate('/AddCertificate', { state: { certificate:data } });
+    }   
+
 
     const [certificates,setCertificates]=useState([]);   
 
@@ -26,7 +38,7 @@ const Certificate = () => {
 
     const deleteCertificates=(id)=>{
         axios.delete(`http://localhost:8080/certificates/${id}`,{mode:"cors"}).then(response=>{
-            console.log(response,"from delete admins")
+            console.log(response,"from delete certificates")
             getCertificates()
         }).catch(error=>{
             console.log(error)
@@ -37,14 +49,22 @@ const Certificate = () => {
     {console.log(Certificate,"from api data")}
     return (
         <div className="dataContainer">
+            <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add Certificate</button>
         <table>
                     <tr>
                         <td>
                             Id
                         </td>
                         <td>
+                            Start Date
+                        </td>
+                        <td>
+                            End Date
+                        </td>
+                        <td>
                             Year
                         </td>
+                       
                         <td>
 
                         </td>
@@ -54,15 +74,21 @@ const Certificate = () => {
                             return(
                         <tr>
                         <td>
-                            {certificate.Certificate_id}
+                            {certificate.certificate_id}
+                        </td>
+                        <td>
+                            {certificate.start_date}
+                        </td>
+                        <td>
+                            {certificate.end_date}
                         </td>
                         <td>
                             {certificate.year}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteCertificates()}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteCertificates()}>Delete</button>
+                        <button className ="deleteButton" onClick={()=>updateCertificate(certificate)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteCertificates(certificate.certificate_id)}>Delete</button>
                         </div>
                         </td>
                     </tr>
@@ -76,3 +102,5 @@ const Certificate = () => {
                 
 
     export default Certificate;
+
+   

@@ -1,22 +1,34 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import {IoMdPersonAdd} from 'react-icons/io';
+import { useNavigate } from "react-router-dom";
 const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
   }
 
-const User= () => {
+
+  const User = () => {
+    const navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/AddUser`; 
+      navigate(path);
+    }
+
+
+    const updateUser=(data)=>{
+        navigate('/AddUser', { state: { user:data } });
+    }  
 
     const [users,setUsers]=useState([]);   
 
 
     useEffect(()=>{
-        getEmployees();
+        getUsers();
     },[])
 
-    const getEmployees=()=>{
-        axios.get('http://localhost:8080/employees').then(response=>{   
+    const getUsers=()=>{
+        axios.get('http://localhost:8080/users').then(response=>{   
         console.log(response,"from get call");
         setUsers(response?.data)
         }).catch(error=>{
@@ -24,10 +36,10 @@ const User= () => {
         })
     }
     
-    const deleteEmployees=(id)=>{
-        axios.delete(`http://localhost:8080/employees/${id}`).then(response=>{
-            console.log(response,"from delete employees")
-            getEmployees()
+    const deleteUsers=(id)=>{
+        axios.delete(`http://localhost:8080/users/${id}`).then(response=>{
+            console.log(response,"from delete users")
+            getUsers()
         }).catch(error=>{
             console.log(error)
         })
@@ -37,6 +49,7 @@ const User= () => {
     {console.log(users,"from api data")}
     return (
         <div className="dataContainer">
+            <button className="button" onClick={routeChange}> <IoMdPersonAdd size={20} color="white" />Add User</button>
         <table>
                     <tr>
                         <td>
@@ -61,21 +74,21 @@ const User= () => {
                             return(
                         <tr>
                         <td>
-                            {user.id}
+                            {user.user_id}
                         </td>
                         <td>
-                            {user.name}
+                            {user.user_name}
                         </td>
                         <td>
-                            {user.age}
+                            {user.user_password}
                         </td>
                         <td>
-                            {user.salary}
+                            {user.user_type}
                         </td>
                         <td>
                         <div className="buttonSectionTdDiv">
-                        <button className ="deleteButton" onClick={()=>deleteEmployees(user.id)}>Update</button>
-                        <button className ="deleteButton" onClick={()=>deleteEmployees(user.id)}>Delete</button> 
+                        <button className ="deleteButton" onClick={()=>updateUser(user)}>Update</button>
+                        <button className ="deleteButton" onClick={()=>deleteUsers(user.user_id)}>Delete</button> 
                         </div>
                         </td>
                     </tr>

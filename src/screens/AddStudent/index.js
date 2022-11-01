@@ -21,10 +21,10 @@ export default function AddStudent() {
     const [selectedCourse,setSelectedCourse]=useState();
     const [selectedCollge, setSelectedCollge]=useState(null);
     const [ studentId,setStudentId]=useState(state?.student?.student_id ? state?.student?.student_id : 0);
-    const [firstName, setFirstName]=useState(state?.student?.studet_first_name? state?.student?.studet_first_name:"");
-    const [lastName, setLastName]=useState(state?.student?.studet_last_name? state?.student?.studet_last_name:"");
-    const [email, setEmail]=useState(state?.student?.studet_email?state?.student?.studet_email:"");
-    const [phoneNumber, setPhoneNumber]=useState(state?.student?.studet_phone_no?state?.student?.studet_phone_no:"");
+    const [firstName, setFirstName]=useState(state?.student?.student_first_name? state?.student?.student_first_name:"");
+    const [lastName, setLastName]=useState(state?.student?.student_last_name? state?.student?.student_last_name:"");
+    const [email, setEmail]=useState(state?.student?.student_email?state?.student?.student_email:"");
+    const [phoneNumber, setPhoneNumber]=useState(state?.student?.student_phone_no?state?.student?.student_phone_no:"");
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
@@ -33,10 +33,10 @@ export default function AddStudent() {
     }
 
     useEffect(()=>{
-        console.log(state.student,"from add student data ")
+        console.log(state,"from add student data ")
         console.log(firstName,lastName,email,phoneNumber,"from add student table")
         console.log(selectedCollge,selectedCourse);
-},[selectedCollge,selectedCourse])
+},[])
 
 const addStudent=()=>{
     console.log("add student called.")
@@ -54,8 +54,8 @@ const addStudent=()=>{
 }
 
 const updateStudent=()=>{
-    console.log("add student called.")
     const body={
+        student_id:studentId,
         student_first_name:firstName,
         student_last_name:lastName,
         student_email:email,
@@ -63,7 +63,7 @@ const updateStudent=()=>{
         student_college_id:1,
         student_course_id:1
     }
-    axios.post("http://localhost:8080/students",body).then(response=>{
+    axios.put(`http://localhost:8080/students/${studentId}`,body).then(response=>{
         console.log(response,"from add student coimponent")
     });
 }
@@ -111,7 +111,8 @@ const updateStudent=()=>{
                 </div>
                 <div className="buttonSectionTdDiv">
                 
-                        <button className="submit-button" onClick={()=>addStudent()}>Submit</button>
+                        {studentId>0?<button className="submit-button" onClick={()=>updateStudent()}>Update</button>
+                        : <button className="submit-button" onClick={()=>addStudent()}>Submit</button>}
     
                         <button className="submit-button"  onClick={()=>routeChange()}>Back</button>
                 </div>

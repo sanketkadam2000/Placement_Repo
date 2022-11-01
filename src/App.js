@@ -15,8 +15,13 @@ import User from "./services/User";
 import College from "./services/College";
 import Certificate from "./services/Certificates";
 import Dashboard from "./services/Dashboard";
-import EditStudent from "./screens/EditStudent";
+import AddAdmin from "./screens/AddAdmin";
 import Course from "./services/Course";
+import AddCertificate from "./screens/AddCertificate";
+import AddCollege from "./screens/AddCollege";
+import AddPlacement from "./screens/AddPlacement";
+import AddUser from "./screens/AddUser";
+import AddCourse from "./screens/AddCourse";
 
 function App() {
   return (
@@ -37,7 +42,12 @@ function App() {
       <Sidebar>
         <Routes> 
         <Route path="/AddStudent" element={<AddStudent/>} exact />
-        <Route path="/EditStudent" element={<EditStudent/>} exact />
+        <Route path="/AddAdmin" element={<AddAdmin/>} exact />
+        <Route path="/AddCertificate" element={<AddCertificate/>} exact />
+        <Route path="/AddCollege" element={<AddCollege/>} exact />
+        <Route path="/AddPlacement" element={<AddPlacement/>} exact />
+        <Route path="/AddUser" element={<AddUser/>} exact />
+        <Route path="/AddCourse" element={<AddCourse/>} exact />
         <Route path="/Dashboard" element={<Dashboard />} exact />
         <Route path="/Student" element={<Student />} exact />
         <Route path="/Admin" element={<Admin/>} exact />
