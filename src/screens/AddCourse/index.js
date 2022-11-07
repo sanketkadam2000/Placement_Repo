@@ -13,7 +13,7 @@ export default function AddCourse() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/Course`; 
+      let path = `/Dashboard/Course`; 
       navigate(path);
     }
 

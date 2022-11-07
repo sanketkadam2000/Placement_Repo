@@ -12,13 +12,13 @@ const header = {
   const Admin = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddAdmin`; 
+      let path = `/Dashboard/AddAdmin`; 
       navigate(path);
     }
 
 
     const updateAdmin=(data)=>{
-        navigate('/AddAdmin', { state: { admin:data } });
+        navigate('/Dashboard/AddAdmin', { state: { admin:data } });
     }   
 
     const [admins,setAdmins]=useState([]);   

@@ -10,13 +10,13 @@ const header = {
   const Placement = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddPlacement`; 
+      let path = `/Dashboard/AddPlacement`; 
       navigate(path);
     }
 
 
     const updatePlacement=(data)=>{
-        navigate('/AddPlacement', { state: { placement:data } });
+        navigate('/Dashboard/AddPlacement', { state: { placement:data } });
     }   
 
 

@@ -4,24 +4,24 @@ import colors from "../util/colors";
 import routes from "../util/routes";
 // import Icon, { FontAwesome, Feather, Ionicons } from 'react-web-vector-icons';
 
-const navbarObject=[
-{
-  name:"Login",
-  toLink:routes.Login
-},
-{
-  name:"Registration",
-  toLink:routes.Registration
-},
-{
-  name:"Contact",
-  toLink:routes.Contact
-},
-{
-  name:"About",
-  toLink:routes.About
-},
-]
+const navbarObject = [
+  {
+    name: "Login",
+    toLink: routes.Login,
+  },
+  {
+    name: "Dashboard",
+    toLink: routes.Dashboard,
+  },
+  {
+    name: "Contact",
+    toLink: routes.Contact,
+  },
+  {
+    name: "About",
+    toLink: routes.About,
+  },
+];
 const studenNavObject=[
   {
     name:"Registration",

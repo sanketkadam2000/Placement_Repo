@@ -28,7 +28,7 @@ export default function AddStudent() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/Student`; 
+      let path = `/Dashboard/Student`; 
       navigate(path);
     }
 

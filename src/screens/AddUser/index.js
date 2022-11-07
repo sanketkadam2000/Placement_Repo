@@ -15,7 +15,7 @@ export default function AddUser() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/User`; 
+      let path = `/Dashboard/User`; 
       navigate(path);
     }
 

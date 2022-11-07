@@ -15,7 +15,7 @@ export default function AddCertificate() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/Certificate`; 
+      let path = `/Dashboard/Certificate`; 
       navigate(path);
     }
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
 import Login from "./screens/login";
 import Contact from "./screens/contact";
 import Registration from "./screens/registration";
@@ -22,50 +22,39 @@ import AddCollege from "./screens/AddCollege";
 import AddPlacement from "./screens/AddPlacement";
 import AddUser from "./screens/AddUser";
 import AddCourse from "./screens/AddCourse";
+import AppLayout from "./layout/AppLayout";
 
 function App() {
   return (
-      <>
+    <>
       <Router>
-      
         <Routes>
-        <Route path="/" element={<Home />} exact /> 
-        <Route path="/Login" element={<Login />} exact />
-        <Route path="/Registration" element={<Registration />} exact />
-        <Route path="/Contact" element={<Contact/>} exact />
-        <Route path="/About" element={<About/>} exact />
-        <Route path="/Sidebar" element={<Sidebar/>} exact />
-        
+          <Route path="/" element={<Home />} exact />
+          <Route path="/Login" element={<Login />} exact />
+          <Route path="/Registration" element={<Registration />} exact />
+          <Route path="/Contact" element={<Contact />} exact />
+          <Route path="/About" element={<About />} exact />
+          <Route path="/Dashboard" element={<AppLayout />} exact>
+            <Route element={<Dashboard />} exact index />
+            <Route path="AddStudent" element={<AddStudent />} exact />
+            <Route path="AddAdmin" element={<AddAdmin />} exact />
+            <Route path="AddCertificate" element={<AddCertificate />} exact />
+            <Route path="AddCollege" element={<AddCollege />} exact />
+            <Route path="AddPlacement" element={<AddPlacement />} exact />
+            <Route path="AddUser" element={<AddUser />} exact />
+            <Route path="AddCourse" element={<AddCourse />} exact />
+            <Route path="Student" element={<Student />} />
+            <Route path="Admin" element={<Admin />} exact />
+            <Route path="College" element={<College />} exact />
+            <Route path="Certificate" element={<Certificate />} exact />
+            <Route path="Placement" element={<Placement />} exact />
+            <Route path="User" element={<User />} exact />
+            <Route path="Course" element={<Course />} exact />
+          </Route>
         </Routes>
-      </Router>  
-      <Router>
-      <Sidebar>
-        <Routes> 
-        <Route path="/AddStudent" element={<AddStudent/>} exact />
-        <Route path="/AddAdmin" element={<AddAdmin/>} exact />
-        <Route path="/AddCertificate" element={<AddCertificate/>} exact />
-        <Route path="/AddCollege" element={<AddCollege/>} exact />
-        <Route path="/AddPlacement" element={<AddPlacement/>} exact />
-        <Route path="/AddUser" element={<AddUser/>} exact />
-        <Route path="/AddCourse" element={<AddCourse/>} exact />
-        <Route path="/Dashboard" element={<Dashboard />} exact />
-        <Route path="/Student" element={<Student />} exact />
-        <Route path="/Admin" element={<Admin/>} exact />
-        <Route path="/College" element={<College/>} exact />
-        <Route path="/Certificate" element={<Certificate/>} exact />
-        <Route path="/Placement" element={<Placement/>} exact />
-        <Route path="/User" element={<User/>} exact />
-        <Route path="/COurse" element={<Course/>} exact />
-        </Routes>
-        </Sidebar>
-        </Router>
-        
-      
+      </Router>
     </>
-    
   );
 }
-  
-
 
 export default App;

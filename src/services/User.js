@@ -11,13 +11,13 @@ const header = {
   const User = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddUser`; 
+      let path = `/Dashboard/AddUser`; 
       navigate(path);
     }
 
 
     const updateUser=(data)=>{
-        navigate('/AddUser', { state: { user:data } });
+        navigate('/Dashboard/AddUser', { state: { user:data } });
     }  
 
     const [users,setUsers]=useState([]);   

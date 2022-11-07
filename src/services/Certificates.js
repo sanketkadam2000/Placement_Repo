@@ -10,13 +10,13 @@ const header = {
   const Certificate = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddCertificate`; 
+      let path = `/Dashboard/AddCertificate`; 
       navigate(path);
     }
 
 
     const updateCertificate=(data)=>{
-        navigate('/AddCertificate', { state: { certificate:data } });
+        navigate('/Dashboard/AddCertificate', { state: { certificate:data } });
     }   
 
 

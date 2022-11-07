@@ -11,13 +11,13 @@ const header = {
   const Course = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddCourse`; 
+      let path = `/Dashboard/AddCourse`; 
       navigate(path);
     }
 
 
     const updateCourse=(data)=>{
-        navigate('/AddCourse', { state: { course:data } });
+        navigate('/Dashboard/AddCourse', { state: { course:data } });
     }   
 
 
