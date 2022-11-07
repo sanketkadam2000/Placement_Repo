@@ -14,7 +14,7 @@ export default function AddAdmin() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/Admin`; 
+      let path = `/Dashboard/Admin`; 
       navigate(path);
     }
 

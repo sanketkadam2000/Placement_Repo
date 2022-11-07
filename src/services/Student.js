@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 const Student = () => {
   const navigate = useNavigate();
   const routeChange = () => {
-    let path = `AddStudent`;
+    let path = `/Dashboard/AddStudent`;
     navigate(path);
   };
 
   const updateStudent = (data) => {
-    navigate("AddStudent", { state: { student: data } });
+    navigate("/Dashboard/AddStudent", { state: { student: data } });
   };
 
   const [students, setStudents] = useState([]);

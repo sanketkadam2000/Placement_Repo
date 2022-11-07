@@ -12,13 +12,13 @@ const header = {
   const College = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/AddCollege`; 
+      let path = `/Dashboard/AddCollege`; 
       navigate(path);
     }
 
 
     const updateCollege=(data)=>{
-        navigate('/AddCollege', { state: { college:data } });
+        navigate('/Dashboard/AddCollege', { state: { college:data } });
     }   
 
     const [colleges,setColleges]=useState([]);   

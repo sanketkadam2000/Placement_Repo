@@ -15,7 +15,7 @@ export default function AddPlacement() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/Placement`; 
+      let path = `/Dashboard/Placement`; 
       navigate(path);
     }
 

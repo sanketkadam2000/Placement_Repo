@@ -14,7 +14,7 @@ export default function AddCollege() {
     
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `/College`; 
+      let path = `/Dashboard/College`; 
       navigate(path);
     }
 
