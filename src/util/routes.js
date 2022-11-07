@@ -1,7 +1,6 @@
-export default{
-    Login:'/Login',
-    Registration:'/Registration',
-    Contact:'/Contact',
-    About:'/About'
-
-}
+export default {
+  Login: "/Login",
+  Dashboard: "/Dashboard",
+  Contact: "/Contact",
+  About: "/About",
+};
