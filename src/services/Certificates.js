@@ -39,6 +39,7 @@ const header = {
     const deleteCertificates=(id)=>{
         axios.delete(`http://localhost:8080/certificates/${id}`,{mode:"cors"}).then(response=>{
             console.log(response,"from delete certificates")
+            alert("Certificate deleted successfully...");
             getCertificates()
         }).catch(error=>{
             console.log(error)

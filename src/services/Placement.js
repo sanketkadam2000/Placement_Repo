@@ -39,6 +39,7 @@ const header = {
     const deletePlacements=(id)=>{
         axios.delete(`http://localhost:8080/placements/${id}`,{mode:"cors"}).then(response=>{
             console.log(response,"from delete placements")
+            alert("Placement deleted successfully...");
             getPlacements()
         }).catch(error=>{
             console.log(error)

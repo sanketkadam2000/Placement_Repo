@@ -34,6 +34,7 @@ const addCertificate=()=>{
     }
     axios.post("http://localhost:8080/certificates",body).then(response=>{
         console.log(response,"from add certificate coimponent")
+        alert("Certificate added successfully...");
     });
 }
 
@@ -46,6 +47,7 @@ const updateCertificate=()=>{
     }
     axios.put(`http://localhost:8080/certificates/${certificateId}`,body).then(response=>{
         console.log(response,"from addcertificate coimponent")
+        alert("Certificate updated successfully...");
     });
 }
 

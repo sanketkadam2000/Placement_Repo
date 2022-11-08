@@ -31,6 +31,7 @@ const addCourse=()=>{
     }
     axios.post("http://localhost:8080/courses",body).then(response=>{
         console.log(response,"from add course coimponent")
+        alert("Course added successfully...");
     });
 }
 
@@ -42,6 +43,7 @@ const updateCourse=()=>{
     }
     axios.put(`http://localhost:8080/courses/${courseId}`,body).then(response=>{
         console.log(response,"from add course coimponent")
+        alert("Course updated successfully...");
     });
 }
 

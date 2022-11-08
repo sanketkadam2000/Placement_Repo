@@ -32,6 +32,7 @@ const addAdmin=()=>{
     }
     axios.post("http://localhost:8080/admins",body).then(response=>{
         console.log(response,"from add admin coimponent")
+        alert("Admin added successfully...");
     });
 }
 
@@ -43,6 +44,7 @@ const updateAdmin=()=>{
     }
     axios.put(`http://localhost:8080/admins/${adminId}`,body).then(response=>{
         console.log(response,"from add admin coimponent")
+        alert("Admin updated successfully...");
     });
 }
 

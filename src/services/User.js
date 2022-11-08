@@ -39,6 +39,7 @@ const header = {
     const deleteUsers=(id)=>{
         axios.delete(`http://localhost:8080/users/${id}`).then(response=>{
             console.log(response,"from delete users")
+            alert("User deleted successfully...");
             getUsers()
         }).catch(error=>{
             console.log(error)
