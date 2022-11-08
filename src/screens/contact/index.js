@@ -36,7 +36,7 @@ function Contact() {
 			        <RiMessage2Fill size={20} color="#6eabc3"/>
         <input type="message" placeholder="Message" className="name"/>
             </div>
-            <div className="submit-button">
+            <div className="Contactsubmit-button">
           <button type="submit">Submit</button>
           </div>
         </form>

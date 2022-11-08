@@ -34,6 +34,7 @@ const addUser=()=>{
     }
     axios.post("http://localhost:8080/users",body).then(response=>{
         console.log(response,"from add user coimponent")
+        alert("User added successfully...");
     });
 }
 
@@ -46,6 +47,7 @@ const updateUser=()=>{
     }
     axios.put(`http://localhost:8080/users/${userId}`,body).then(response=>{
         console.log(response,"from add user coimponent")
+        alert("User updated successfully...");
     });
 }
 

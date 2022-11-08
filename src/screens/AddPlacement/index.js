@@ -34,6 +34,7 @@ const addPlacement=()=>{
     }
     axios.post("http://localhost:8080/placements",body).then(response=>{
         console.log(response,"from add placement coimponent")
+        alert("Placement added successfully...");
     });
 }
 
@@ -47,6 +48,7 @@ const updatePlacement=()=>{
     }
     axios.put(`http://localhost:8080/placements/${placementId}`,body).then(response=>{
         console.log(response,"from add placement coimponent")
+        alert("Placement updated successfully...");
     });
 }
 

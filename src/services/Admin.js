@@ -40,6 +40,7 @@ const header = {
     const deleteAdmins=(id)=>{
         axios.delete(`http://localhost:8080/admins/${id}`,{mode:"cors"}).then(response=>{
             console.log(response,"from delete admins")
+            alert("Admin deleted successfully...");
             getAdmins()
         }).catch(error=>{
             console.log(error)

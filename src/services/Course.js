@@ -40,6 +40,7 @@ const header = {
     const deleteCourses=(id)=>{
         axios.delete(`http://localhost:8080/courses/${id}`,{mode:"cors"}).then(response=>{
             console.log(response,"from delete courses")
+            alert("Course deleted successfully...");
             getCourses()
         }).catch(error=>{
             console.log(error)

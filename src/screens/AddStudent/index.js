@@ -50,6 +50,8 @@ const addStudent=()=>{
     }
     axios.post("http://localhost:8080/students",body).then(response=>{
         console.log(response,"from add student coimponent")
+        alert("Student added successfully...");
+        
     });
 }
 
@@ -65,6 +67,8 @@ const updateStudent=()=>{
     }
     axios.put(`http://localhost:8080/students/${studentId}`,body).then(response=>{
         console.log(response,"from add student coimponent")
+        alert("Student updated successfully...");
+        
     });
 }
 

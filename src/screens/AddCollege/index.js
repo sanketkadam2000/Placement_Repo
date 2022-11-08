@@ -32,6 +32,7 @@ const addCollege=()=>{
     }
     axios.post("http://localhost:8080/colleges",body).then(response=>{
         console.log(response,"from add college coimponent")
+        alert("College added successfully...");
     });
 }
 
@@ -43,6 +44,7 @@ const updateCollege=()=>{
     }
     axios.put(`http://localhost:8080/colleges/${collegeId}`,body).then(response=>{
         console.log(response,"from add college coimponent")
+        alert("College updated successfully...");
     });
 }
 

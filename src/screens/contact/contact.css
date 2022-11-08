@@ -101,12 +101,12 @@
     align-content: center;
 }
 
-.submit-button{
+.Contactsubmit-button{
   width: 18rem;
   height: 2.5rem;     
 }
 
-  .submit-button button{
+  .Contactsubmit-button button{
       width: 18rem;
       height: 2.5rem;
       border-radius: 3rem; 
