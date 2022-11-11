@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AddAdmin.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {FaLock} from 'react-icons/fa';
+import { RiAdminFill } from "react-icons/ri";
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -56,11 +57,11 @@ const updateAdmin=()=>{
                     <h1> Admin Record</h1>
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <RiAdminFill size={20} color="#6eabc3"/>
                     <input type="text" placeholder=" Name" value={Name} className='name' onChange={(event)=>setName(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <FaLock size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Password" value={Password} className='name' onChange={(event)=>setPassword(event.target.value)} />
                 </div>
                 

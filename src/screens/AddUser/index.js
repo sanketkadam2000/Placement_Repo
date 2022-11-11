@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AddUser.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {FaLock, FaUserAlt} from 'react-icons/fa';
+import { HiUsers } from "react-icons/hi";
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -63,11 +64,11 @@ const updateUser=()=>{
                     <input type="text" placeholder=" Name" value={Name} className='name' onChange={(event)=>setName(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <FaLock size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Password" value={Password} className='name' onChange={(event)=>setPassword(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <HiUsers size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Type" value={Type} className='name' onChange={(event)=>setType(event.target.value)} />
                 </div>
                 

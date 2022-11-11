@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AddCollege.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {FaUniversity} from 'react-icons/fa';
+import {MdLocationOn} from 'react-icons/md';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -56,11 +57,11 @@ const updateCollege=()=>{
                     <h1> College Record</h1>
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <FaUniversity size={20} color="#6eabc3"/>
                     <input type="text" placeholder=" Name" value={Name} className='name' onChange={(event)=>setName(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <MdLocationOn size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Location" value={Location} className='name' onChange={(event)=>setLocation(event.target.value)} />
                 </div>
                 

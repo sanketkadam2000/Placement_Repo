@@ -57,8 +57,6 @@ const dashboardItems =[
 ];
 
   return (
-    // {dashboards.map((dashboard, index) => {
-    //   console.log(dashboard, "from dashboard table data");
     <div className="dashboardContainer">
       <div className='stats'>
       {dashboards.map((item, index) => (

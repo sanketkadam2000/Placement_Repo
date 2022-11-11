@@ -6,10 +6,6 @@ import routes from "../util/routes";
 
 const navbarObject = [
   {
-    name: "Login",
-    toLink: routes.Login,
-  },
-  {
     name: "Dashboard",
     toLink: routes.Dashboard,
   },
@@ -22,36 +18,15 @@ const navbarObject = [
     toLink: routes.About,
   },
 ];
-const studenNavObject=[
-  {
-    name:"Registration",
-    toLink:routes.Registration
-  },
-  {
-    name:"Contact",
-    toLink:routes.Contact
-  },
-  ]
 
-
-const adminNavObject=[
-  {
-    name:"Company",
-    toLink:routes.Registration
-  },
-  {
-    name:"Student",
-    toLink:routes.Contact
-  },
-  ]
 
 
 const Navbar = () => {
   const [rollname,setRollname]=useState("Student");
   return (
     <nav className="navbar">
-      <div style={{display:'flex', height:100, backgroundColor:colors.backGroundColor,  flexDirection:'row', justifyContent:"center", alignItems:"center", paddingRight:"1%"}}>
-      <div style={{display:'flex', flex:5, justifyContent:"flex-start", alignItems:"center", padding:"1%"}}>
+      <div style={{display:'flex', height:100, backgroundColor:colors.backGroundColor,  flexDirection:'row', justifyContent:"center", alignItems:"center", paddingRight:"0%"}}>
+      <div style={{display:'flex', flex:7, justifyContent:"flex-start", alignItems:"center", padding:"1%"}}>
       {/* <Ionicons
     name='md-send'
     color='blue'
@@ -61,15 +36,9 @@ const Navbar = () => {
        <h1 style={{color:colors.white, fontSize:24, fontWeight:"bold"}}>Placement Management System</h1>
        </div>
        <div style={{display:'flex', flex:2, flexDirection:"row", alignSelf:'center'}}>
-        { rollname==="student"?studenNavObject.map(item=>{
-          return <div style={{padding:'3%', margin:"1%", border:1, borderStyle:"solid", borderColor:colors.white, borderRadius:10}}><Link to={item.toLink} style={{color:colors.white, fontWeight:"bold", textDecoration:'none'}}>{item.name}</Link></div>
-        })
-        :
-        rollname=="admin"? adminNavObject.map(item=>{
-          return <div style={{padding:'3%', margin:"1%", border:1, borderStyle:"solid", borderColor:colors.white, borderRadius:10}}><Link to={item.toLink} style={{color:colors.white, fontWeight:"bold", textDecoration:'none'}}>{item.name}</Link></div>
-        }) :
+        { 
         navbarObject.map(item=>{
-          return <div style={{padding:'3%', margin:"1%", border:1, borderStyle:"solid", borderColor:colors.white, borderRadius:10}}><Link to={item.toLink} style={{color:colors.white, fontWeight:"bold", textDecoration:'none'}}>{item.name}</Link></div>
+          return <div style={{padding:'3%', margin:"3%", border:1, borderStyle:"solid", borderColor:colors.white, borderRadius:10}}><Link to={item.toLink} style={{color:colors.white, fontWeight:"bold", textDecoration:'none'}}>{item.name}</Link></div>
         })
         }
        {/* <div style={{margin:'1%'}}><Link to="/Login" style={{color:"white"}}>Login</Link></div>
