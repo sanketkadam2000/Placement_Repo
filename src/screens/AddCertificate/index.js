@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./AddCertificate.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {BsCalendarDateFill} from 'react-icons/bs';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -59,15 +59,15 @@ const updateCertificate=()=>{
                     <h1> certificate Record</h1>
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <BsCalendarDateFill size={20} color="#6eabc3"/>
                     <input type="text" placeholder=" Start Date" value={StartDate} className='name' onChange={(event)=>setStartDate(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <BsCalendarDateFill size={20} color="#6eabc3"/>
                     <input type="text" placeholder="End Date" value={EndDate} className='name' onChange={(event)=>setEndDate(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <BsCalendarDateFill size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Year" value={Year} className='name' onChange={(event)=>setYear(event.target.value)} />
                 </div>
                 

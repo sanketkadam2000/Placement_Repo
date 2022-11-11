@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./AddPlacement.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {FaGraduationCap} from 'react-icons/fa';
+import {BsCalendarDateFill} from 'react-icons/bs';
+import { AiTwotoneFileExclamation } from "react-icons/ai";
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -60,15 +62,15 @@ const updatePlacement=()=>{
                     <h1> Placement Record</h1>
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <AiTwotoneFileExclamation size={20} color="#6eabc3"/>
                     <input type="text" placeholder=" Name" value={Name} className='name' onChange={(event)=>setName(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <FaGraduationCap size={20} color="#6eabc3"/>
                     <input type="text" placeholder="Qaulification" value={Qaulification} className='name' onChange={(event)=>setQaulification(event.target.value)} />
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <BsCalendarDateFill size={20} color="#6eabc3"/>
                     <input type="text" placeholder="LocalDate" value={LocalDate} className='name' onChange={(event)=>setLocalDate(event.target.value)} />
                 </div>
                 

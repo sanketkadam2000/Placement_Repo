@@ -7,11 +7,18 @@ import { RiAdminFill } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
 
 import "./sidebar.scss";
+import { MdDashboardCustomize } from "react-icons/md";
 
 const sidebarNavItems = [
   {
-    display: "Dashboard",
+    display: "Home",
     icon: <FaHome color={"#fff"} />,
+    to: "/",
+    section: "home",
+  },
+  {
+    display: "Dashboard",
+    icon: <MdDashboardCustomize color={"#fff"} />,
     to: "/Dashboard",
     section: "dashboard",
   },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./AddCourse.css";
-import {FaUserAlt} from 'react-icons/fa';
+import {ImBook} from 'react-icons/im';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -55,7 +55,7 @@ const updateCourse=()=>{
                     <h1> Course Record</h1>
                 </div>
                 <div className="inputContainer">
-                <FaUserAlt size={20} color="#6eabc3"/>
+                <ImBook size={20} color="#6eabc3"/>
                     <input type="text" placeholder=" Name" value={Name} className='name' onChange={(event)=>setName(event.target.value)} />
                 </div>
                 
