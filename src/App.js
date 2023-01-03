@@ -32,10 +32,11 @@ function App() {
           <Route path="/" element={<Home />} exact />
           <Route path="/Login" element={<Login />} exact />
           <Route path="/Registration" element={<Registration />} exact />
-          <Route path="/Contact" element={<Contact />} exact />
           <Route path="/About" element={<About />} exact />
+          <Route element={<Home />} exact index />
+          <Route path="/Contact" element={<Contact />} exact />
           <Route path="/Dashboard" element={<AppLayout />} exact>
-            <Route element={<Dashboard />} exact index />
+          <Route element={<Dashboard />} exact index />
             <Route path="AddStudent" element={<AddStudent />} exact />
             <Route path="AddAdmin" element={<AddAdmin />} exact />
             <Route path="AddCertificate" element={<AddCertificate />} exact />
