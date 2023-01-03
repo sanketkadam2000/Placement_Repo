@@ -69,39 +69,10 @@ const dashboardItems =[
             </div>
           </Link>
           ))}
-        {/* <div>
-          <FaUserAlt/>
-          <span className='sta' data-max='400'>0</span>
-          <p>Student</p>
-      </div>
-      <div>
-          <RiAdminFill />
-          <span className='sta' data-max='400'>0</span>
-          <p>Admin</p>
-      </div>
-      <div>
-          <FaCertificate />
-          <span className='sta' data-max='400'>0</span>
-          <p>Certificate</p>
-      </div>
-      <div>
-          <FaUniversity />
-          <span className='sta' data-max='400'>0</span>
-          <p>College</p>
-      </div>
-      <div>
-          <AiTwotoneFileExclamation />
-          <span className='sta' data-max='400'>0</span>
-          <p>Placement</p>
-      </div>
-      <div>
-          <FaUserTie />
-          <span className='sta' data-max='400'>0</span>
-          <p>User</p>
-      </div>   */}
+        
       </div>
       </div>
-    // })}
+    
       
   )
 
